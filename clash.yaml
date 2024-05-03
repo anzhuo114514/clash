@@ -1,57 +1,57 @@
-allow-lan true
-cfw-bypass
+allow-lan: true
+cfw-bypass:
 - localhost
-- 127.
-- 10.
-- 172.16.
-- 172.17.
-- 172.18.
-- 172.19.
-- 172.20.
-- 172.21.
-- 172.22.
-- 172.23.
-- 172.24.
-- 172.25.
-- 172.26.
-- 172.27.
-- 172.28.
-- 172.29.
-- 172.30.
-- 172.31.
-- 192.168.
-- local
-dns
-  default-nameserver
+- 127.*
+- 10.*
+- 172.16.*
+- 172.17.*
+- 172.18.*
+- 172.19.*
+- 172.20.*
+- 172.21.*
+- 172.22.*
+- 172.23.*
+- 172.24.*
+- 172.25.*
+- 172.26.*
+- 172.27.*
+- 172.28.*
+- 172.29.*
+- 172.30.*
+- 172.31.*
+- 192.168.*
+- <local>
+dns:
+  default-nameserver:
   - 223.5.5.5
   - 119.29.29.29
-  enable true
-  enhanced-mode fake-ip
-  fake-ip-filter
-  - '.lan'
-  - '.local'
+  enable: true
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+  - '*.lan'
+  - '*.local'
   - dns.msftncsi.com
   - www.msftncsi.com
   - www.msftconnecttest.com
-  - stun...
-  - stun..
+  - stun.*.*.*
+  - stun.*.*
   - miwifi.com
   - music.163.com
-  - '.music.163.com'
-  - '.126.net'
+  - '*.music.163.com'
+  - '*.126.net'
   - api-jooxtt.sanook.com
   - api.joox.com
   - joox.com
   - y.qq.com
-  - '.y.qq.com'
+  - '*.y.qq.com'
   - streamoc.music.tc.qq.com
   - mobileoc.music.tc.qq.com
   - isure.stream.qqmusic.qq.com
   - dl.stream.qqmusic.qq.com
   - aqqmusic.tc.qq.com
   - amobile.music.tc.qq.com
-  - '.xiami.com'
-  - '.music.migu.cn'
+  - '*.xiami.com'
+  - '*.music.migu.cn'
   - music.migu.cn
   - netis.cc
   - router.asus.com
@@ -63,25 +63,25 @@ dns
   - tplinklogin.net
   - tplinkwifi.net
   - tplinkrepeater.net
-  - '.ntp.org.cn'
-  - '.openwrt.pool.ntp.org'
-  - '.msftconnecttest.com'
-  - '.msftncsi.com'
+  - '*.ntp.org.cn'
+  - '*.openwrt.pool.ntp.org'
+  - '*.msftconnecttest.com'
+  - '*.msftncsi.com'
   - localhost.ptlogin2.qq.com
-  - '...srv.nintendo.net'
-  - '..stun.playstation.net'
-  - xbox...microsoft.com
-  - '.ipv6.microsoft.com'
-  - '..xboxlive.com'
+  - '*.*.*.srv.nintendo.net'
+  - '*.*.stun.playstation.net'
+  - xbox.*.*.microsoft.com
+  - '*.ipv6.microsoft.com'
+  - '*.*.xboxlive.com'
   - speedtest.cros.wr.pvp.net
-  fake-ip-range 198.18.0.116
-  fallback
-  - tls101.101.101.101853
-  - https101.101.101.101dns-query
-  - httpspublic.dns.iij.jpdns-query
-  - https208.67.220.220dns-query
-  fallback-filter
-    domain
+  fake-ip-range: 198.18.0.1/16
+  fallback:
+  - tls://101.101.101.101:853
+  - https://101.101.101.101/dns-query
+  - https://public.dns.iij.jp/dns-query
+  - https://208.67.220.220/dns-query
+  fallback-filter:
+    domain:
     - +.google.com
     - +.facebook.com
     - +.twitter.com
@@ -98,124 +98,124 @@ dns
     - +.nloli.xyz
     - +.jsdelivr.net
     - +.proton.me
-    geoip true
-    ipcidr
-    - 240.0.0.04
-    - 0.0.0.032
-    - 127.0.0.132
-  ipv6 true
-  nameserver
-  - tls223.5.5.5853
-  - https223.6.6.6dns-query
-  - https120.53.53.53dns-query
-external-controller 127.0.0.19090
-log-level info
-mode Rule
-mixed-port 7890
-proxies
-- ip 172.16.0.2
-  mtu 1280
-  name 🇳🇱 NL-CF-WARP-1
-  port 8886
-  private-key KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
-  public-key bmXOC+F1FxEMF9dyiK2H51SUtzH0JuVo51h2wPfgyo=
-  remote-dns-resolve true
-  server 188.114.99.244
-  type wireguard
-  udp true
-- ip 172.16.0.2
-  mtu 1280
-  name 🇳🇱 NL-CF-WARP-2
-  port 8886
-  private-key KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
-  public-key bmXOC+F1FxEMF9dyiK2H51SUtzH0JuVo51h2wPfgyo=
-  remote-dns-resolve true
-  server 188.114.97.90
-  type wireguard
-  udp true
-- ip 172.16.0.2
-  mtu 1280
-  name 🇺🇸 US-CF-WARP-3
-  port 8886
-  private-key KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
-  public-key bmXOC+F1FxEMF9dyiK2H51SUtzH0JuVo51h2wPfgyo=
-  remote-dns-resolve true
-  server 162.159.192.152
-  type wireguard
-  udp true
-- ip 172.16.0.2
-  mtu 1280
-  name 🇺🇸 US-CF-WARP-4
-  port 8886
-  private-key KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
-  public-key bmXOC+F1FxEMF9dyiK2H51SUtzH0JuVo51h2wPfgyo=
-  remote-dns-resolve true
-  server 162.159.192.196
-  type wireguard
-  udp true
-- ip 172.16.0.2
-  mtu 1280
-  name 🇳🇱 NL-CF-WARP-5
-  port 8886
-  private-key KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
-  public-key bmXOC+F1FxEMF9dyiK2H51SUtzH0JuVo51h2wPfgyo=
-  remote-dns-resolve true
-  server 188.114.98.181
-  type wireguard
-  udp true
-- ip 172.16.0.2
-  mtu 1280
-  name 🇺🇸 US-CF-WARP-6
-  port 8886
-  private-key KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
-  public-key bmXOC+F1FxEMF9dyiK2H51SUtzH0JuVo51h2wPfgyo=
-  remote-dns-resolve true
-  server 162.159.195.40
-  type wireguard
-  udp true
-- ip 172.16.0.2
-  mtu 1280
-  name 🇺🇸 US-CF-WARP-7
-  port 8886
-  private-key KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
-  public-key bmXOC+F1FxEMF9dyiK2H51SUtzH0JuVo51h2wPfgyo=
-  remote-dns-resolve true
-  server 162.159.192.94
-  type wireguard
-  udp true
-- ip 172.16.0.2
-  mtu 1280
-  name 🇳🇱 NL-CF-WARP-8
-  port 8886
-  private-key KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
-  public-key bmXOC+F1FxEMF9dyiK2H51SUtzH0JuVo51h2wPfgyo=
-  remote-dns-resolve true
-  server 188.114.97.34
-  type wireguard
-  udp true
-- ip 172.16.0.2
-  mtu 1280
-  name 🇳🇱 NL-CF-WARP-9
-  port 3854
-  private-key KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
-  public-key bmXOC+F1FxEMF9dyiK2H51SUtzH0JuVo51h2wPfgyo=
-  remote-dns-resolve true
-  server 188.114.97.228
-  type wireguard
-  udp true
-- ip 172.16.0.2
-  mtu 1280
-  name 🇺🇸 US-CF-WARP-10
-  port 8886
-  private-key KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
-  public-key bmXOC+F1FxEMF9dyiK2H51SUtzH0JuVo51h2wPfgyo=
-  remote-dns-resolve true
-  server 162.159.195.176
-  type wireguard
-  udp true
-proxy-groups
-- name 🌐 节点选择
-  proxies
+    geoip: true
+    ipcidr:
+    - 240.0.0.0/4
+    - 0.0.0.0/32
+    - 127.0.0.1/32
+  ipv6: true
+  nameserver:
+  - tls://223.5.5.5:853
+  - https://223.6.6.6/dns-query
+  - https://120.53.53.53/dns-query
+external-controller: 127.0.0.1:9090
+log-level: info
+mode: Rule
+mixed-port: 7890
+proxies:
+- ip: 172.16.0.2
+  mtu: 1280
+  name: 🇳🇱 NL-CF-WARP-1
+  port: 8886
+  private-key: KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.99.244
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: 🇳🇱 NL-CF-WARP-2
+  port: 8886
+  private-key: KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.97.90
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: 🇺🇸 US-CF-WARP-3
+  port: 8886
+  private-key: KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 162.159.192.152
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: 🇺🇸 US-CF-WARP-4
+  port: 8886
+  private-key: KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 162.159.192.196
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: 🇳🇱 NL-CF-WARP-5
+  port: 8886
+  private-key: KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.98.181
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: 🇺🇸 US-CF-WARP-6
+  port: 8886
+  private-key: KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 162.159.195.40
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: 🇺🇸 US-CF-WARP-7
+  port: 8886
+  private-key: KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 162.159.192.94
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: 🇳🇱 NL-CF-WARP-8
+  port: 8886
+  private-key: KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.97.34
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: 🇳🇱 NL-CF-WARP-9
+  port: 3854
+  private-key: KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.97.228
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: 🇺🇸 US-CF-WARP-10
+  port: 8886
+  private-key: KEeuUuY+SnmMzlogzyOVH+50jUtjlcro3HyafPHIKHk=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 162.159.195.176
+  type: wireguard
+  udp: true
+proxy-groups:
+- name: 🌐 节点选择
+  proxies:
   - 💡 自动选择
   - 🇳🇱 NL-CF-WARP-1
   - 🇳🇱 NL-CF-WARP-2
@@ -227,10 +227,10 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- interval 300
-  name 💡 自动选择
-  proxies
+  type: select
+- interval: 300
+  name: 💡 自动选择
+  proxies:
   - 🇳🇱 NL-CF-WARP-1
   - 🇳🇱 NL-CF-WARP-2
   - 🇺🇸 US-CF-WARP-3
@@ -241,10 +241,10 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type url-test
-  url httpwww.gstatic.comgenerate_204
-- name 👉 国内网站
-  proxies
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+- name: 👉 国内网站
+  proxies:
   - 🌍 全球直连
   - 🌐 节点选择
   - 💡 自动选择
@@ -258,9 +258,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 👉 国外网站
-  proxies
+  type: select
+- name: 👉 国外网站
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -274,9 +274,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🤖 OPENAI
-  proxies
+  type: select
+- name: 🤖 OPENAI
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -290,9 +290,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 👉 例外网站
-  proxies
+  type: select
+- name: 👉 例外网站
+  proxies:
   - 🌍 全球直连
   - 🌐 节点选择
   - 💡 自动选择
@@ -306,9 +306,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 📲 聊天软件
-  proxies
+  type: select
+- name: 📲 聊天软件
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -322,9 +322,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🌏 日韩媒体
-  proxies
+  type: select
+- name: 🌏 日韩媒体
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -338,9 +338,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🌏 港台媒体
-  proxies
+  type: select
+- name: 🌏 港台媒体
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -354,9 +354,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🌍 国外媒体
-  proxies
+  type: select
+- name: 🌍 国外媒体
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -370,9 +370,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 📹 YouTube
-  proxies
+  type: select
+- name: 📹 YouTube
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -386,9 +386,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🎵 Spotify
-  proxies
+  type: select
+- name: 🎵 Spotify
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -402,9 +402,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🎬 NETFLIX
-  proxies
+  type: select
+- name: 🎬 NETFLIX
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -418,9 +418,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🎬 Disney+
-  proxies
+  type: select
+- name: 🎬 Disney+
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -434,9 +434,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🎬 HBO
-  proxies
+  type: select
+- name: 🎬 HBO
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -450,9 +450,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🎬 Prime
-  proxies
+  type: select
+- name: 🎬 Prime
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -466,9 +466,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 📺 Emby
-  proxies
+  type: select
+- name: 📺 Emby
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -482,9 +482,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 📺 TikTok
-  proxies
+  type: select
+- name: 📺 TikTok
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -498,9 +498,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 📺 巴哈姆特
-  proxies
+  type: select
+- name: 📺 巴哈姆特
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -514,9 +514,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 📺 哔哩哔哩
-  proxies
+  type: select
+- name: 📺 哔哩哔哩
+  proxies:
   - 🌍 全球直连
   - 🌐 节点选择
   - 💡 自动选择
@@ -530,9 +530,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 📺 爱奇艺
-  proxies
+  type: select
+- name: 📺 爱奇艺
+  proxies:
   - 🌍 全球直连
   - 🌐 节点选择
   - 💡 自动选择
@@ -546,9 +546,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🍎 苹果服务
-  proxies
+  type: select
+- name: 🍎 苹果服务
+  proxies:
   - 🌍 全球直连
   - 🌐 节点选择
   - 💡 自动选择
@@ -562,9 +562,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🧩 微软服务
-  proxies
+  type: select
+- name: 🧩 微软服务
+  proxies:
   - 🌍 全球直连
   - 🌐 节点选择
   - 💡 自动选择
@@ -578,9 +578,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🎮 游戏平台
-  proxies
+  type: select
+- name: 🎮 游戏平台
+  proxies:
   - 🌐 节点选择
   - 💡 自动选择
   - 🌍 全球直连
@@ -594,9 +594,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 📥 BT & PT
-  proxies
+  type: select
+- name: 📥 BT & PT
+  proxies:
   - 🌍 全球直连
   - 🌐 节点选择
   - 💡 自动选择
@@ -610,9 +610,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🌍 全球直连
-  proxies
+  type: select
+- name: 🌍 全球直连
+  proxies:
   - DIRECT
   - 🇳🇱 NL-CF-WARP-1
   - 🇳🇱 NL-CF-WARP-2
@@ -624,9 +624,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🛡 全球拦截
-  proxies
+  type: select
+- name: 🛡 全球拦截
+  proxies:
   - REJECT
   - DIRECT
   - 🇳🇱 NL-CF-WARP-1
@@ -639,9 +639,9 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-- name 🍃 应用净化
-  proxies
+  type: select
+- name: 🍃 应用净化
+  proxies:
   - REJECT
   - DIRECT
   - 🇳🇱 NL-CF-WARP-1
@@ -654,8 +654,8 @@ proxy-groups
   - 🇳🇱 NL-CF-WARP-8
   - 🇳🇱 NL-CF-WARP-9
   - 🇺🇸 US-CF-WARP-10
-  type select
-rules
+  type: select
+rules:
 - DOMAIN-SUFFIX,ol.epicgames.com,🎮 游戏平台
 - DOMAIN-SUFFIX,epicgames.com,🎮 游戏平台
 - DOMAIN-SUFFIX,helpshift.com,🎮 游戏平台
@@ -705,26 +705,26 @@ rules
 - DOMAIN-SUFFIX,telegram.me,📲 聊天软件
 - DOMAIN-SUFFIX,telegram.org,📲 聊天软件
 - DOMAIN-SUFFIX,telesco.pe,📲 聊天软件
-- IP-CIDR,91.108.0.016,📲 聊天软件,no-resolve
-- IP-CIDR,109.239.140.024,📲 聊天软件,no-resolve
-- IP-CIDR,149.154.160.020,📲 聊天软件,no-resolve
-- IP-CIDR6,200167c4e848,📲 聊天软件,no-resolve
-- IP-CIDR6,2001b28f23d48,📲 聊天软件,no-resolve
-- IP-CIDR6,2001b28f23f48,📲 聊天软件,no-resolve
+- IP-CIDR,91.108.0.0/16,📲 聊天软件,no-resolve
+- IP-CIDR,109.239.140.0/24,📲 聊天软件,no-resolve
+- IP-CIDR,149.154.160.0/20,📲 聊天软件,no-resolve
+- IP-CIDR6,2001:67c:4e8::/48,📲 聊天软件,no-resolve
+- IP-CIDR6,2001:b28:f23d::/48,📲 聊天软件,no-resolve
+- IP-CIDR6,2001:b28:f23f::/48,📲 聊天软件,no-resolve
 - DOMAIN-KEYWORD,whatsapp,📲 聊天软件
-- IP-CIDR,18.194.0.015,📲 聊天软件,no-resolve
-- IP-CIDR,34.224.0.012,📲 聊天软件,no-resolve
-- IP-CIDR,54.242.0.015,📲 聊天软件,no-resolve
-- IP-CIDR,50.22.198.20430,📲 聊天软件,no-resolve
-- IP-CIDR,208.43.122.12827,📲 聊天软件,no-resolve
-- IP-CIDR,108.168.174.016,📲 聊天软件,no-resolve
-- IP-CIDR,173.192.231.3227,📲 聊天软件,no-resolve
-- IP-CIDR,158.85.5.19227,📲 聊天软件,no-resolve
-- IP-CIDR,174.37.243.016,📲 聊天软件,no-resolve
-- IP-CIDR,158.85.46.12827,📲 聊天软件,no-resolve
-- IP-CIDR,173.192.222.16027,📲 聊天软件,no-resolve
-- IP-CIDR,184.173.128.017,📲 聊天软件,no-resolve
-- IP-CIDR,158.85.224.16027,📲 聊天软件,no-resolve
+- IP-CIDR,18.194.0.0/15,📲 聊天软件,no-resolve
+- IP-CIDR,34.224.0.0/12,📲 聊天软件,no-resolve
+- IP-CIDR,54.242.0.0/15,📲 聊天软件,no-resolve
+- IP-CIDR,50.22.198.204/30,📲 聊天软件,no-resolve
+- IP-CIDR,208.43.122.128/27,📲 聊天软件,no-resolve
+- IP-CIDR,108.168.174.0/16,📲 聊天软件,no-resolve
+- IP-CIDR,173.192.231.32/27,📲 聊天软件,no-resolve
+- IP-CIDR,158.85.5.192/27,📲 聊天软件,no-resolve
+- IP-CIDR,174.37.243.0/16,📲 聊天软件,no-resolve
+- IP-CIDR,158.85.46.128/27,📲 聊天软件,no-resolve
+- IP-CIDR,173.192.222.160/27,📲 聊天软件,no-resolve
+- IP-CIDR,184.173.128.0/17,📲 聊天软件,no-resolve
+- IP-CIDR,158.85.224.160/27,📲 聊天软件,no-resolve
 - DOMAIN-SUFFIX,lin.ee,📲 聊天软件
 - DOMAIN-SUFFIX,line-apps.com,📲 聊天软件
 - DOMAIN-SUFFIX,line-cdn.net,📲 聊天软件
@@ -732,79 +732,79 @@ rules
 - DOMAIN-SUFFIX,line.me,📲 聊天软件
 - DOMAIN-SUFFIX,line.naver.jp,📲 聊天软件
 - DOMAIN-SUFFIX,nhncorp.jp,📲 聊天软件
-- IP-CIDR,103.2.28.024,📲 聊天软件,no-resolve
-- IP-CIDR,103.2.30.023,📲 聊天软件,no-resolve
-- IP-CIDR,119.235.224.024,📲 聊天软件,no-resolve
-- IP-CIDR,119.235.232.024,📲 聊天软件,no-resolve
-- IP-CIDR,119.235.235.024,📲 聊天软件,no-resolve
-- IP-CIDR,119.235.236.023,📲 聊天软件,no-resolve
-- IP-CIDR,147.92.128.017,📲 聊天软件,no-resolve
-- IP-CIDR,203.104.128.019,📲 聊天软件,no-resolve
+- IP-CIDR,103.2.28.0/24,📲 聊天软件,no-resolve
+- IP-CIDR,103.2.30.0/23,📲 聊天软件,no-resolve
+- IP-CIDR,119.235.224.0/24,📲 聊天软件,no-resolve
+- IP-CIDR,119.235.232.0/24,📲 聊天软件,no-resolve
+- IP-CIDR,119.235.235.0/24,📲 聊天软件,no-resolve
+- IP-CIDR,119.235.236.0/23,📲 聊天软件,no-resolve
+- IP-CIDR,147.92.128.0/17,📲 聊天软件,no-resolve
+- IP-CIDR,203.104.128.0/19,📲 聊天软件,no-resolve
 - DOMAIN-SUFFIX,kakao.com,📲 聊天软件
 - DOMAIN-SUFFIX,kakao.co.kr,📲 聊天软件
 - DOMAIN-SUFFIX,kakaocdn.net,📲 聊天软件
-- IP-CIDR,1.201.0.024,📲 聊天软件,no-resolve
-- IP-CIDR,27.0.236.022,📲 聊天软件,no-resolve
-- IP-CIDR,103.27.148.022,📲 聊天软件,no-resolve
-- IP-CIDR,103.246.56.022,📲 聊天软件,no-resolve
-- IP-CIDR,110.76.140.022,📲 聊天软件,no-resolve
-- IP-CIDR,113.61.104.022,📲 聊天软件,no-resolve
+- IP-CIDR,1.201.0.0/24,📲 聊天软件,no-resolve
+- IP-CIDR,27.0.236.0/22,📲 聊天软件,no-resolve
+- IP-CIDR,103.27.148.0/22,📲 聊天软件,no-resolve
+- IP-CIDR,103.246.56.0/22,📲 聊天软件,no-resolve
+- IP-CIDR,110.76.140.0/22,📲 聊天软件,no-resolve
+- IP-CIDR,113.61.104.0/22,📲 聊天软件,no-resolve
 - DOMAIN-SUFFIX,clubhouseapi.com,📲 聊天软件,Clubhouse
 - DOMAIN-SUFFIX,joinclubhouse.com,📲 聊天软件,Clubhouse
 - DOMAIN,clubhouseprod.s3.amazonaws.com,📲 聊天软件,Clubhouse
 - DOMAIN,clubhouse.pubnub.com,📲 聊天软件,Clubhouse
-- IP-CIDR,3.0.163.7832,📲 聊天软件,Clubhouse
-- IP-CIDR,13.230.60.3532,📲 聊天软件,Clubhouse
-- IP-CIDR,23.98.43.15232,📲 聊天软件,Clubhouse
-- IP-CIDR,35.156.231.15032,📲 聊天软件,Clubhouse
-- IP-CIDR,35.168.106.5332,📲 聊天软件,Clubhouse
-- IP-CIDR,35.178.208.18732,📲 聊天软件,Clubhouse
-- IP-CIDR,45.40.48.1132,📲 聊天软件,Clubhouse
-- IP-CIDR,50.18.128.2232,📲 聊天软件,Clubhouse
-- IP-CIDR,52.52.84.17032,📲 聊天软件,Clubhouse
-- IP-CIDR,52.58.56.24432,📲 聊天软件,Clubhouse
-- IP-CIDR,52.178.26.11032,📲 聊天软件,Clubhouse
-- IP-CIDR,52.194.158.5932,📲 聊天软件,Clubhouse
-- IP-CIDR,52.221.46.20832,📲 聊天软件,Clubhouse
-- IP-CIDR,54.178.26.11032,📲 聊天软件,Clubhouse
-- IP-CIDR,69.28.51.14832,📲 聊天软件,Clubhouse
-- IP-CIDR,103.65.41.13032,📲 聊天软件,Clubhouse
-- IP-CIDR,103.65.41.13232,📲 聊天软件,Clubhouse
-- IP-CIDR,103.65.41.13732,📲 聊天软件,Clubhouse
-- IP-CIDR,103.65.41.13932,📲 聊天软件,Clubhouse
-- IP-CIDR,103.65.41.15232,📲 聊天软件,Clubhouse
-- IP-CIDR,103.65.41.15732,📲 聊天软件,Clubhouse
-- IP-CIDR,103.65.41.15932,📲 聊天软件,Clubhouse
-- IP-CIDR,103.65.41.16632,📲 聊天软件,Clubhouse
-- IP-CIDR,103.65.41.16932,📲 聊天软件,Clubhouse
-- IP-CIDR,129.227.57.13032,📲 聊天软件,Clubhouse
-- IP-CIDR,129.227.57.13332,📲 聊天软件,Clubhouse
-- IP-CIDR,129.227.57.13532,📲 聊天软件,Clubhouse
-- IP-CIDR,129.227.57.13632,📲 聊天软件,Clubhouse
-- IP-CIDR,129.227.57.13832,📲 聊天软件,Clubhouse
-- IP-CIDR,129.227.57.13932,📲 聊天软件,Clubhouse
-- IP-CIDR,129.227.57.14432,📲 聊天软件,Clubhouse
-- IP-CIDR,129.227.57.14632,📲 聊天软件,Clubhouse
-- IP-CIDR,129.227.57.14732,📲 聊天软件,Clubhouse
-- IP-CIDR,148.153.126.14732,📲 聊天软件,Clubhouse
-- IP-CIDR,148.153.172.7332,📲 聊天软件,Clubhouse
-- IP-CIDR,148.153.172.7432,📲 聊天软件,Clubhouse
-- IP-CIDR,148.153.172.7532,📲 聊天软件,Clubhouse
-- IP-CIDR,148.153.172.7632,📲 聊天软件,Clubhouse
-- IP-CIDR,148.153.172.7732,📲 聊天软件,Clubhouse
-- IP-CIDR,164.52.102.6632,📲 聊天软件,Clubhouse
-- IP-CIDR,164.52.102.6732,📲 聊天软件,Clubhouse
-- IP-CIDR,164.52.102.6832,📲 聊天软件,Clubhouse
-- IP-CIDR,164.52.102.6932,📲 聊天软件,Clubhouse
-- IP-CIDR,164.52.102.7032,📲 聊天软件,Clubhouse
-- IP-CIDR,164.52.102.7532,📲 聊天软件,Clubhouse
-- IP-CIDR,164.52.102.7632,📲 聊天软件,Clubhouse
-- IP-CIDR,164.52.102.7732,📲 聊天软件,Clubhouse
-- IP-CIDR,164.52.102.9132,📲 聊天软件,Clubhouse
-- IP-CIDR,199.190.44.3632,📲 聊天软件,Clubhouse
-- IP-CIDR,199.190.44.3732,📲 聊天软件,Clubhouse
-- IP-CIDR,202.181.136.10832,📲 聊天软件,Clubhouse
-- IP-CIDR,202.226.25.16632,📲 聊天软件,Clubhouse
+- IP-CIDR,3.0.163.78/32,📲 聊天软件,Clubhouse
+- IP-CIDR,13.230.60.35/32,📲 聊天软件,Clubhouse
+- IP-CIDR,23.98.43.152/32,📲 聊天软件,Clubhouse
+- IP-CIDR,35.156.231.150/32,📲 聊天软件,Clubhouse
+- IP-CIDR,35.168.106.53/32,📲 聊天软件,Clubhouse
+- IP-CIDR,35.178.208.187/32,📲 聊天软件,Clubhouse
+- IP-CIDR,45.40.48.11/32,📲 聊天软件,Clubhouse
+- IP-CIDR,50.18.128.22/32,📲 聊天软件,Clubhouse
+- IP-CIDR,52.52.84.170/32,📲 聊天软件,Clubhouse
+- IP-CIDR,52.58.56.244/32,📲 聊天软件,Clubhouse
+- IP-CIDR,52.178.26.110/32,📲 聊天软件,Clubhouse
+- IP-CIDR,52.194.158.59/32,📲 聊天软件,Clubhouse
+- IP-CIDR,52.221.46.208/32,📲 聊天软件,Clubhouse
+- IP-CIDR,54.178.26.110/32,📲 聊天软件,Clubhouse
+- IP-CIDR,69.28.51.148/32,📲 聊天软件,Clubhouse
+- IP-CIDR,103.65.41.130/32,📲 聊天软件,Clubhouse
+- IP-CIDR,103.65.41.132/32,📲 聊天软件,Clubhouse
+- IP-CIDR,103.65.41.137/32,📲 聊天软件,Clubhouse
+- IP-CIDR,103.65.41.139/32,📲 聊天软件,Clubhouse
+- IP-CIDR,103.65.41.152/32,📲 聊天软件,Clubhouse
+- IP-CIDR,103.65.41.157/32,📲 聊天软件,Clubhouse
+- IP-CIDR,103.65.41.159/32,📲 聊天软件,Clubhouse
+- IP-CIDR,103.65.41.166/32,📲 聊天软件,Clubhouse
+- IP-CIDR,103.65.41.169/32,📲 聊天软件,Clubhouse
+- IP-CIDR,129.227.57.130/32,📲 聊天软件,Clubhouse
+- IP-CIDR,129.227.57.133/32,📲 聊天软件,Clubhouse
+- IP-CIDR,129.227.57.135/32,📲 聊天软件,Clubhouse
+- IP-CIDR,129.227.57.136/32,📲 聊天软件,Clubhouse
+- IP-CIDR,129.227.57.138/32,📲 聊天软件,Clubhouse
+- IP-CIDR,129.227.57.139/32,📲 聊天软件,Clubhouse
+- IP-CIDR,129.227.57.144/32,📲 聊天软件,Clubhouse
+- IP-CIDR,129.227.57.146/32,📲 聊天软件,Clubhouse
+- IP-CIDR,129.227.57.147/32,📲 聊天软件,Clubhouse
+- IP-CIDR,148.153.126.147/32,📲 聊天软件,Clubhouse
+- IP-CIDR,148.153.172.73/32,📲 聊天软件,Clubhouse
+- IP-CIDR,148.153.172.74/32,📲 聊天软件,Clubhouse
+- IP-CIDR,148.153.172.75/32,📲 聊天软件,Clubhouse
+- IP-CIDR,148.153.172.76/32,📲 聊天软件,Clubhouse
+- IP-CIDR,148.153.172.77/32,📲 聊天软件,Clubhouse
+- IP-CIDR,164.52.102.66/32,📲 聊天软件,Clubhouse
+- IP-CIDR,164.52.102.67/32,📲 聊天软件,Clubhouse
+- IP-CIDR,164.52.102.68/32,📲 聊天软件,Clubhouse
+- IP-CIDR,164.52.102.69/32,📲 聊天软件,Clubhouse
+- IP-CIDR,164.52.102.70/32,📲 聊天软件,Clubhouse
+- IP-CIDR,164.52.102.75/32,📲 聊天软件,Clubhouse
+- IP-CIDR,164.52.102.76/32,📲 聊天软件,Clubhouse
+- IP-CIDR,164.52.102.77/32,📲 聊天软件,Clubhouse
+- IP-CIDR,164.52.102.91/32,📲 聊天软件,Clubhouse
+- IP-CIDR,199.190.44.36/32,📲 聊天软件,Clubhouse
+- IP-CIDR,199.190.44.37/32,📲 聊天软件,Clubhouse
+- IP-CIDR,202.181.136.108/32,📲 聊天软件,Clubhouse
+- IP-CIDR,202.226.25.166/32,📲 聊天软件,Clubhouse
 - DOMAIN,gamer-cds.cdn.hinet.net,📺 巴哈姆特
 - DOMAIN,gamer2-cds.cdn.hinet.net,📺 巴哈姆特
 - DOMAIN-SUFFIX,bahamut.com.tw,📺 巴哈姆特
@@ -828,7 +828,7 @@ rules
 - DOMAIN-SUFFIX,spotify.com,🎵 Spotify
 - DOMAIN-SUFFIX,spotifycdn.net,🎵 Spotify
 - DOMAIN-SUFFIX,spotilocal.com,🎵 Spotify
-- IP-CIDR,35.186.224.4732,🎵 Spotify,no-resolve
+- IP-CIDR,35.186.224.47/32,🎵 Spotify,no-resolve
 - DOMAIN-SUFFIX,dmc.nico,🌏 日韩媒体
 - DOMAIN-SUFFIX,nicovideo.jp,🌏 日韩媒体
 - DOMAIN-SUFFIX,nimg.jp,🌏 日韩媒体
@@ -869,8 +869,8 @@ rules
 - DOMAIN-SUFFIX,akatsukiworks.com,🌏 日韩媒体
 - DOMAIN-SUFFIX,alicesoft.com,🌏 日韩媒体
 - DOMAIN-SUFFIX,cosmiccute.com,🌏 日韩媒体
-- IP-CIDR,203.104.209.732,🌏 日韩媒体,no-resolve
-- IP-CIDR,125.6.189.732,🌏 日韩媒体,no-resolve
+- IP-CIDR,203.104.209.7/32,🌏 日韩媒体,no-resolve
+- IP-CIDR,125.6.189.7/32,🌏 日韩媒体,no-resolve
 - DOMAIN,d3c7rimkq79yfu.cloudfront.net,🌏 港台媒体
 - DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net,🌏 港台媒体
 - DOMAIN-SUFFIX,linetv.tw,🌏 港台媒体
@@ -1059,20 +1059,20 @@ rules
 - DOMAIN-SUFFIX,fb.me,🌍 国外媒体
 - DOMAIN-SUFFIX,fbcdn.com,🌍 国外媒体
 - DOMAIN-SUFFIX,fbcdn.net,🌍 国外媒体
-- IP-CIDR,31.13.24.021,🌍 国外媒体,no-resolve
-- IP-CIDR,31.13.64.018,🌍 国外媒体,no-resolve
-- IP-CIDR,45.64.40.022,🌍 国外媒体,no-resolve
-- IP-CIDR,66.220.144.020,🌍 国外媒体,no-resolve
-- IP-CIDR,69.63.176.020,🌍 国外媒体,no-resolve
-- IP-CIDR,69.171.224.019,🌍 国外媒体,no-resolve
-- IP-CIDR,74.119.76.022,🌍 国外媒体,no-resolve
-- IP-CIDR,103.4.96.022,🌍 国外媒体,no-resolve
-- IP-CIDR,129.134.0.017,🌍 国外媒体,no-resolve
-- IP-CIDR,157.240.0.017,🌍 国外媒体,no-resolve
-- IP-CIDR,173.252.64.018,🌍 国外媒体,no-resolve
-- IP-CIDR,179.60.192.022,🌍 国外媒体,no-resolve
-- IP-CIDR,185.60.216.022,🌍 国外媒体,no-resolve
-- IP-CIDR,204.15.20.022,🌍 国外媒体,no-resolve
+- IP-CIDR,31.13.24.0/21,🌍 国外媒体,no-resolve
+- IP-CIDR,31.13.64.0/18,🌍 国外媒体,no-resolve
+- IP-CIDR,45.64.40.0/22,🌍 国外媒体,no-resolve
+- IP-CIDR,66.220.144.0/20,🌍 国外媒体,no-resolve
+- IP-CIDR,69.63.176.0/20,🌍 国外媒体,no-resolve
+- IP-CIDR,69.171.224.0/19,🌍 国外媒体,no-resolve
+- IP-CIDR,74.119.76.0/22,🌍 国外媒体,no-resolve
+- IP-CIDR,103.4.96.0/22,🌍 国外媒体,no-resolve
+- IP-CIDR,129.134.0.0/17,🌍 国外媒体,no-resolve
+- IP-CIDR,157.240.0.0/17,🌍 国外媒体,no-resolve
+- IP-CIDR,173.252.64.0/18,🌍 国外媒体,no-resolve
+- IP-CIDR,179.60.192.0/22,🌍 国外媒体,no-resolve
+- IP-CIDR,185.60.216.0/22,🌍 国外媒体,no-resolve
+- IP-CIDR,204.15.20.0/22,🌍 国外媒体,no-resolve
 - DOMAIN-KEYWORD,instagram,🌍 国外媒体
 - DOMAIN-SUFFIX,cdninstagram.com,🌍 国外媒体
 - DOMAIN-SUFFIX,instagram.com,🌍 国外媒体
@@ -1106,16 +1106,16 @@ rules
 - DOMAIN-SUFFIX,biligame.net,📺 哔哩哔哩
 - DOMAIN-SUFFIX,im9.com,📺 哔哩哔哩
 - DOMAIN-SUFFIX,smtcdns.net,📺 哔哩哔哩
-- IP-CIDR,45.43.32.23432,📺 哔哩哔哩
-- IP-CIDR,119.29.29.2932,📺 哔哩哔哩
-- IP-CIDR,128.1.62.20032,📺 哔哩哔哩
-- IP-CIDR,128.1.62.20132,📺 哔哩哔哩
-- IP-CIDR,150.116.92.25032,📺 哔哩哔哩
-- IP-CIDR,164.52.76.1832,📺 哔哩哔哩
-- IP-CIDR,203.107.1.3332,📺 哔哩哔哩
-- IP-CIDR,203.107.1.3432,📺 哔哩哔哩
-- IP-CIDR,203.107.1.6532,📺 哔哩哔哩
-- IP-CIDR,203.107.1.6632,📺 哔哩哔哩
+- IP-CIDR,45.43.32.234/32,📺 哔哩哔哩
+- IP-CIDR,119.29.29.29/32,📺 哔哩哔哩
+- IP-CIDR,128.1.62.200/32,📺 哔哩哔哩
+- IP-CIDR,128.1.62.201/32,📺 哔哩哔哩
+- IP-CIDR,150.116.92.250/32,📺 哔哩哔哩
+- IP-CIDR,164.52.76.18/32,📺 哔哩哔哩
+- IP-CIDR,203.107.1.33/32,📺 哔哩哔哩
+- IP-CIDR,203.107.1.34/32,📺 哔哩哔哩
+- IP-CIDR,203.107.1.65/32,📺 哔哩哔哩
+- IP-CIDR,203.107.1.66/32,📺 哔哩哔哩
 - DOMAIN,intel-cache.m.iqiyi.com,📺 爱奇艺
 - DOMAIN,intel-cache.video.iqiyi.com,📺 爱奇艺
 - DOMAIN,intl-rcd.iqiyi.com,📺 爱奇艺
@@ -1132,12 +1132,12 @@ rules
 - DOMAIN-SUFFIX,qiyi.com,📺 爱奇艺
 - DOMAIN-SUFFIX,qiyipic.com,📺 爱奇艺
 - DOMAIN-SUFFIX,qy.net,📺 爱奇艺
-- IP-CIDR,23.40.241.25132,📺 爱奇艺,no-resolve
-- IP-CIDR,23.40.242.1032,📺 爱奇艺,no-resolve
-- IP-CIDR,103.44.56.022,📺 爱奇艺,no-resolve
-- IP-CIDR,118.26.32.023,📺 爱奇艺,no-resolve
-- IP-CIDR,118.26.120.024,📺 爱奇艺,no-resolve
-- IP-CIDR,223.119.62.22528,📺 爱奇艺,no-resolve
+- IP-CIDR,23.40.241.251/32,📺 爱奇艺,no-resolve
+- IP-CIDR,23.40.242.10/32,📺 爱奇艺,no-resolve
+- IP-CIDR,103.44.56.0/22,📺 爱奇艺,no-resolve
+- IP-CIDR,118.26.32.0/23,📺 爱奇艺,no-resolve
+- IP-CIDR,118.26.120.0/24,📺 爱奇艺,no-resolve
+- IP-CIDR,223.119.62.225/28,📺 爱奇艺,no-resolve
 - DOMAIN,cache.video.iqiyi.com,📺 爱奇艺
 - DOMAIN-SUFFIX,openai.com,🤖 OPENAI
 - DOMAIN-SUFFIX,dler.cloud,👉 国外网站
@@ -1268,28 +1268,28 @@ rules
 - DOMAIN-SUFFIX,gvt0.com,👉 国外网站
 - DOMAIN-SUFFIX,gvt1.com,👉 国外网站
 - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,👉 国外网站
-- IP-CIDR,35.190.247.024,👉 国外网站,no-resolve
-- IP-CIDR,35.191.0.016,👉 国外网站,no-resolve
-- IP-CIDR,64.233.160.019,👉 国外网站,no-resolve
-- IP-CIDR,66.102.0.020,👉 国外网站,no-resolve
-- IP-CIDR,66.249.80.020,👉 国外网站,no-resolve
-- IP-CIDR,72.14.192.018,👉 国外网站,no-resolve
-- IP-CIDR,74.125.0.016,👉 国外网站,no-resolve
-- IP-CIDR,108.177.8.021,👉 国外网站,no-resolve
-- IP-CIDR,108.177.96.019,👉 国外网站,no-resolve
-- IP-CIDR,130.211.0.022,👉 国外网站,no-resolve
-- IP-CIDR,172.217.0.019,👉 国外网站,no-resolve
-- IP-CIDR,172.217.32.020,👉 国外网站,no-resolve
-- IP-CIDR,172.217.128.019,👉 国外网站,no-resolve
-- IP-CIDR,172.217.160.020,👉 国外网站,no-resolve
-- IP-CIDR,172.217.192.019,👉 国外网站,no-resolve
-- IP-CIDR,172.253.56.021,👉 国外网站,no-resolve
-- IP-CIDR,172.253.112.020,👉 国外网站,no-resolve
-- IP-CIDR,173.194.0.016,👉 国外网站,no-resolve
-- IP-CIDR,173.252.0.016,👉 国外网站,no-resolve
-- IP-CIDR,209.85.128.017,👉 国外网站,no-resolve
-- IP-CIDR,216.58.192.019,👉 国外网站,no-resolve
-- IP-CIDR,216.239.32.019,👉 国外网站,no-resolve
+- IP-CIDR,35.190.247.0/24,👉 国外网站,no-resolve
+- IP-CIDR,35.191.0.0/16,👉 国外网站,no-resolve
+- IP-CIDR,64.233.160.0/19,👉 国外网站,no-resolve
+- IP-CIDR,66.102.0.0/20,👉 国外网站,no-resolve
+- IP-CIDR,66.249.80.0/20,👉 国外网站,no-resolve
+- IP-CIDR,72.14.192.0/18,👉 国外网站,no-resolve
+- IP-CIDR,74.125.0.0/16,👉 国外网站,no-resolve
+- IP-CIDR,108.177.8.0/21,👉 国外网站,no-resolve
+- IP-CIDR,108.177.96.0/19,👉 国外网站,no-resolve
+- IP-CIDR,130.211.0.0/22,👉 国外网站,no-resolve
+- IP-CIDR,172.217.0.0/19,👉 国外网站,no-resolve
+- IP-CIDR,172.217.32.0/20,👉 国外网站,no-resolve
+- IP-CIDR,172.217.128.0/19,👉 国外网站,no-resolve
+- IP-CIDR,172.217.160.0/20,👉 国外网站,no-resolve
+- IP-CIDR,172.217.192.0/19,👉 国外网站,no-resolve
+- IP-CIDR,172.253.56.0/21,👉 国外网站,no-resolve
+- IP-CIDR,172.253.112.0/20,👉 国外网站,no-resolve
+- IP-CIDR,173.194.0.0/16,👉 国外网站,no-resolve
+- IP-CIDR,173.252.0.0/16,👉 国外网站,no-resolve
+- IP-CIDR,209.85.128.0/17,👉 国外网站,no-resolve
+- IP-CIDR,216.58.192.0/19,👉 国外网站,no-resolve
+- IP-CIDR,216.239.32.0/19,👉 国外网站,no-resolve
 - DOMAIN,alt1-mtalk.google.com,👉 国外网站
 - DOMAIN,alt2-mtalk.google.com,👉 国外网站
 - DOMAIN,alt3-mtalk.google.com,👉 国外网站
@@ -1298,32 +1298,32 @@ rules
 - DOMAIN,alt6-mtalk.google.com,👉 国外网站
 - DOMAIN,alt7-mtalk.google.com,👉 国外网站
 - DOMAIN,alt8-mtalk.google.com,👉 国外网站
-- IP-CIDR,64.233.177.18832,👉 国外网站,no-resolve
-- IP-CIDR,64.233.186.18832,👉 国外网站,no-resolve
-- IP-CIDR,64.233.187.18832,👉 国外网站,no-resolve
-- IP-CIDR,64.233.188.18832,👉 国外网站,no-resolve
-- IP-CIDR,64.233.189.18832,👉 国外网站,no-resolve
-- IP-CIDR,74.125.23.18832,👉 国外网站,no-resolve
-- IP-CIDR,74.125.24.18832,👉 国外网站,no-resolve
-- IP-CIDR,74.125.28.18832,👉 国外网站,no-resolve
-- IP-CIDR,74.125.127.18832,👉 国外网站,no-resolve
-- IP-CIDR,74.125.137.18832,👉 国外网站,no-resolve
-- IP-CIDR,74.125.203.18832,👉 国外网站,no-resolve
-- IP-CIDR,74.125.204.18832,👉 国外网站,no-resolve
-- IP-CIDR,74.125.206.18832,👉 国外网站,no-resolve
-- IP-CIDR,108.177.125.18832,👉 国外网站,no-resolve
-- IP-CIDR,142.250.4.18832,👉 国外网站,no-resolve
-- IP-CIDR,142.250.10.18832,👉 国外网站,no-resolve
-- IP-CIDR,142.250.31.18832,👉 国外网站,no-resolve
-- IP-CIDR,142.250.96.18832,👉 国外网站,no-resolve
-- IP-CIDR,172.217.194.18832,👉 国外网站,no-resolve
-- IP-CIDR,172.217.218.18832,👉 国外网站,no-resolve
-- IP-CIDR,172.217.219.18832,👉 国外网站,no-resolve
-- IP-CIDR,172.253.63.18832,👉 国外网站,no-resolve
-- IP-CIDR,172.253.122.18832,👉 国外网站,no-resolve
-- IP-CIDR,173.194.175.18832,👉 国外网站,no-resolve
-- IP-CIDR,173.194.218.18832,👉 国外网站,no-resolve
-- IP-CIDR,209.85.233.18832,👉 国外网站,no-resolve
+- IP-CIDR,64.233.177.188/32,👉 国外网站,no-resolve
+- IP-CIDR,64.233.186.188/32,👉 国外网站,no-resolve
+- IP-CIDR,64.233.187.188/32,👉 国外网站,no-resolve
+- IP-CIDR,64.233.188.188/32,👉 国外网站,no-resolve
+- IP-CIDR,64.233.189.188/32,👉 国外网站,no-resolve
+- IP-CIDR,74.125.23.188/32,👉 国外网站,no-resolve
+- IP-CIDR,74.125.24.188/32,👉 国外网站,no-resolve
+- IP-CIDR,74.125.28.188/32,👉 国外网站,no-resolve
+- IP-CIDR,74.125.127.188/32,👉 国外网站,no-resolve
+- IP-CIDR,74.125.137.188/32,👉 国外网站,no-resolve
+- IP-CIDR,74.125.203.188/32,👉 国外网站,no-resolve
+- IP-CIDR,74.125.204.188/32,👉 国外网站,no-resolve
+- IP-CIDR,74.125.206.188/32,👉 国外网站,no-resolve
+- IP-CIDR,108.177.125.188/32,👉 国外网站,no-resolve
+- IP-CIDR,142.250.4.188/32,👉 国外网站,no-resolve
+- IP-CIDR,142.250.10.188/32,👉 国外网站,no-resolve
+- IP-CIDR,142.250.31.188/32,👉 国外网站,no-resolve
+- IP-CIDR,142.250.96.188/32,👉 国外网站,no-resolve
+- IP-CIDR,172.217.194.188/32,👉 国外网站,no-resolve
+- IP-CIDR,172.217.218.188/32,👉 国外网站,no-resolve
+- IP-CIDR,172.217.219.188/32,👉 国外网站,no-resolve
+- IP-CIDR,172.253.63.188/32,👉 国外网站,no-resolve
+- IP-CIDR,172.253.122.188/32,👉 国外网站,no-resolve
+- IP-CIDR,173.194.175.188/32,👉 国外网站,no-resolve
+- IP-CIDR,173.194.218.188/32,👉 国外网站,no-resolve
+- IP-CIDR,209.85.233.188/32,👉 国外网站,no-resolve
 - DOMAIN-SUFFIX,mediawiki.org,👉 国外网站
 - DOMAIN-SUFFIX,wikibooks.org,👉 国外网站
 - DOMAIN-SUFFIX,wikidata.org,👉 国外网站
@@ -6930,16 +6930,16 @@ rules
 - DOMAIN-SUFFIX,itunes.com,🍎 苹果服务
 - DOMAIN-SUFFIX,me.com,🍎 苹果服务
 - DOMAIN-SUFFIX,mzstatic.com,🍎 苹果服务
-- IP-CIDR,17.0.0.08,🍎 苹果服务,no-resolve
-- IP-CIDR,63.92.224.019,🍎 苹果服务,no-resolve
-- IP-CIDR,65.199.22.023,🍎 苹果服务,no-resolve
-- IP-CIDR,139.178.128.018,🍎 苹果服务,no-resolve
-- IP-CIDR,144.178.0.019,🍎 苹果服务,no-resolve
-- IP-CIDR,144.178.36.022,🍎 苹果服务,no-resolve
-- IP-CIDR,144.178.48.020,🍎 苹果服务,no-resolve
-- IP-CIDR,192.35.50.024,🍎 苹果服务,no-resolve
-- IP-CIDR,198.183.17.024,🍎 苹果服务,no-resolve
-- IP-CIDR,205.180.175.024,🍎 苹果服务,no-resolve
+- IP-CIDR,17.0.0.0/8,🍎 苹果服务,no-resolve
+- IP-CIDR,63.92.224.0/19,🍎 苹果服务,no-resolve
+- IP-CIDR,65.199.22.0/23,🍎 苹果服务,no-resolve
+- IP-CIDR,139.178.128.0/18,🍎 苹果服务,no-resolve
+- IP-CIDR,144.178.0.0/19,🍎 苹果服务,no-resolve
+- IP-CIDR,144.178.36.0/22,🍎 苹果服务,no-resolve
+- IP-CIDR,144.178.48.0/20,🍎 苹果服务,no-resolve
+- IP-CIDR,192.35.50.0/24,🍎 苹果服务,no-resolve
+- IP-CIDR,198.183.17.0/24,🍎 苹果服务,no-resolve
+- IP-CIDR,205.180.175.0/24,🍎 苹果服务,no-resolve
 - DOMAIN,gspe1-ssl.ls.apple.com,🍎 苹果服务
 - DOMAIN,np-edge.itunes.apple.com,🍎 苹果服务
 - DOMAIN,play-edge.itunes.apple.com,🍎 苹果服务
@@ -7015,15 +7015,15 @@ rules
 - DOMAIN-SUFFIX,ip6-loopback,👉 国内网站
 - DOMAIN-SUFFIX,local,👉 国内网站
 - DOMAIN-SUFFIX,localhost,👉 国内网站
-- IP-CIDR,10.0.0.08,👉 国内网站,no-resolve
-- IP-CIDR,100.64.0.010,👉 国内网站,no-resolve
-- IP-CIDR,127.0.0.08,👉 国内网站,no-resolve
-- IP-CIDR,172.16.0.012,👉 国内网站,no-resolve
-- IP-CIDR,192.168.0.016,👉 国内网站,no-resolve
-- IP-CIDR6,1128,👉 国内网站,no-resolve
-- IP-CIDR6,fc007,👉 国内网站,no-resolve
-- IP-CIDR6,fe8010,👉 国内网站,no-resolve
-- IP-CIDR6,fd008,👉 国内网站,no-resolve
+- IP-CIDR,10.0.0.0/8,👉 国内网站,no-resolve
+- IP-CIDR,100.64.0.0/10,👉 国内网站,no-resolve
+- IP-CIDR,127.0.0.0/8,👉 国内网站,no-resolve
+- IP-CIDR,172.16.0.0/12,👉 国内网站,no-resolve
+- IP-CIDR,192.168.0.0/16,👉 国内网站,no-resolve
+- IP-CIDR6,::1/128,👉 国内网站,no-resolve
+- IP-CIDR6,fc00::/7,👉 国内网站,no-resolve
+- IP-CIDR6,fe80::/10,👉 国内网站,no-resolve
+- IP-CIDR6,fd00::/8,👉 国内网站,no-resolve
 - DOMAIN,router.asus.com,👉 国内网站
 - DOMAIN-SUFFIX,hiwifi.com,👉 国内网站
 - DOMAIN-SUFFIX,leike.cc,👉 国内网站
